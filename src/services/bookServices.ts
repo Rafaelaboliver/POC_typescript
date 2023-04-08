@@ -19,7 +19,10 @@ async function findAll() {
 }
 
 async function updateAvaibility (book:CreateNewBookRegister) {
-    
+    const result = await bookRepositories.findById(book);
+    if (!result.rowCount) throw notFoundError();
+
+    await bookRepositories.updateAvaibility(book)
 }
 
 export default {

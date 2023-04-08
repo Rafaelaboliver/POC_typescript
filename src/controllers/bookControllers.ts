@@ -39,13 +39,13 @@ async function updateAvaibility(req: Request, res: Response, next: NextFunction)
 
     try {
         await bookServices.updateAvaibility(book);
-
+        return res.sendStatus(201);
     } catch (error) {
-        
+        next(error);
     }
 }
 export default {
     create,
     findAll,
-    updateAvaibility
+    updateAvaibility,
 }
