@@ -8,7 +8,7 @@ async function create(book: CreateNewBookRegister) {
     const thereIsBook = await bookRepositories.findByName(book);
     if (thereIsBook) throw conflictError('Book already exists');
 
-    await bookRepositories.create(book)
+    return await bookRepositories.create(book);
 }
 
 async function findAll() {
@@ -22,11 +22,19 @@ async function updateAvaibility (book:CreateNewBookRegister) {
     const result = await bookRepositories.findById(book);
     if (!result.rowCount) throw notFoundError();
 
-    await bookRepositories.updateAvaibility(book)
+    return await bookRepositories.updateAvaibility(book);
+}
+
+async function deleteBook(book: CreateNewBookRegister) {
+    const result = await bookRepositories.findByName(book);
+    if(!result) throw notFoundError();
+
+    return await bookRepositories.deleteBook(book);
 }
 
 export default {
     create,
     findAll,
     updateAvaibility,
+    deleteBook,
 }

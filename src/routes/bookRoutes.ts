@@ -6,7 +6,8 @@ import { bookSchema } from "schemas/Book";
 
 const bookRoutes = Router();
 
-bookRoutes.post(
+bookRoutes
+.post(
     '/',
     validateSchema(bookSchema),
     bookControllers.create
@@ -21,5 +22,10 @@ bookRoutes.put(
     '/update',
     bookControllers.updateAvaibility
 );
+
+bookRoutes.delete(
+    '/delete',
+    bookControllers.deleteBook
+)
 
 export default bookRoutes;

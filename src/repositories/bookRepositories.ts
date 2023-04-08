@@ -27,11 +27,18 @@ async function findById(book: CreateNewBookRegister) {
 }
 
 async function updateAvaibility(book: CreateNewBookRegister) {
-    await connectionDb.query(`
+    return await connectionDb.query(`
     UPDATE books
     SET available = $1
     WHERE bookId = $2;
     `, [book.available, book.bookId]);
+}
+
+async function deleteBook(book:CreateNewBookRegister) {
+    return await connectionDb.query(`
+    DELETE FROM books 
+    WHERE bookId = $1;
+    `, [book.bookId]);
 }
 
 export default {
@@ -40,4 +47,5 @@ export default {
     findAll,
     findById,
     updateAvaibility,
+    deleteBook
 }

@@ -44,8 +44,26 @@ async function updateAvaibility(req: Request, res: Response, next: NextFunction)
         next(error);
     }
 }
+
+async function deleteBook(req: Request, res: Response, next: NextFunction) {
+    const book: CreateNewBookRegister = {
+        name: req.body.name,
+        author: req.body.author,
+        bookId: req.body.id,
+        available: req.body.available
+    }
+
+    try {
+        await bookServices.deleteBook(book);
+        return res.sendStatus(201);
+    } catch (error) {
+        next(error);
+    }
+}
+
 export default {
     create,
     findAll,
     updateAvaibility,
+    deleteBook,
 }
