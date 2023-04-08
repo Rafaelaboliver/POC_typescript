@@ -6,8 +6,7 @@ import { bookSchema } from "schemas/Book";
 
 const bookRoutes = Router();
 
-bookRoutes
-.post(
+bookRoutes.post(
     '/',
     validateSchema(bookSchema),
     bookControllers.create
