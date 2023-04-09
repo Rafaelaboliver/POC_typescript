@@ -8,23 +8,23 @@ import { bookSchema } from "../schemas/Book.js";
 const bookRoutes = Router();
 
 bookRoutes.post(
-    '/',
+    '/new-register',
     validateSchema(bookSchema),
     bookControllers.create
 );
 
 bookRoutes.get(
-    '/home',
+    '/all-books',
     bookControllers.findAll
 );
 
 bookRoutes.put(
-    '/update',
+    '/update/:bookId',
     bookControllers.updateAvaibility
 );
 
 bookRoutes.delete(
-    '/delete',
+    '/delete/:bookId',
     bookControllers.deleteBook
 )
 
