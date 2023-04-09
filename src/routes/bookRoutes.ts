@@ -1,7 +1,7 @@
 import { Router } from "express";
-import bookControllers from "../controllers/bookControllers";
-import { validateSchema } from "../middlewares/validateSchema";
-import { bookSchema } from "../schemas/Book";
+import bookControllers from "../controllers/bookControllers.js";
+import { validateSchema } from "../middlewares/validateSchema.js";
+import { bookSchema } from "../schemas/Book.js";
 
 
 

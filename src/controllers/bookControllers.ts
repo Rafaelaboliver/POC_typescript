@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import bookServices from "../services/bookServices";
-import { CreateNewBookRegister } from "../protocols";
+import bookServices from "../services/bookServices.js";
+import { CreateNewBookRegister } from "../protocols.js";
 
 
 

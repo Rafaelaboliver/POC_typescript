@@ -1,5 +1,4 @@
-import { ApplicationError } from "protocols";
-
+import { ApplicationError } from "../protocols.js";
 
 export function notFoundError(): ApplicationError {
     return {

@@ -1,8 +1,7 @@
-
-import { conflictError } from "../errors";
-import bookRepositories from "../repositories/bookRepositories";
-import { CreateNewBookRegister } from "../protocols";
-import { notFoundError } from "../errors/not-found-error";
+import bookRepositories from "../repositories/bookRepositories.js";
+import { CreateNewBookRegister } from "../protocols.js";
+import { notFoundError } from "../errors/not-found-error.js";
+import { conflictError } from "../errors/conflict-error.js";
 
 
 async function create(book: CreateNewBookRegister) {

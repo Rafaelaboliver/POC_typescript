@@ -1,5 +1,5 @@
-import connectionDb from "../config/database";
-import { CreateNewBookRegister } from "../protocols";
+import connectionDb from "../config/database.js";
+import { CreateNewBookRegister } from "../protocols.js";
 
 async function create (book: CreateNewBookRegister) {
     return await connectionDb.query(`
