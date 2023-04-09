@@ -1,7 +1,8 @@
-import { notFoundError } from "errors/not-found-error";
+
 import { conflictError } from "../errors";
 import bookRepositories from "../repositories/bookRepositories";
-import { CreateNewBookRegister } from "../utils/protocols";
+import { CreateNewBookRegister } from "../protocols";
+import { notFoundError } from "../errors/not-found-error";
 
 
 async function create(book: CreateNewBookRegister) {

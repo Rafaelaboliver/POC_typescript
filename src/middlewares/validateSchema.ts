@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import { conflictError } from "../errors";
+
 import { ObjectSchema } from "joi";
+import { conflictError } from "../errors";
 
 export function validateSchema(schema: ObjectSchema) {
     return (req: Request, res: Response, next: any) => {

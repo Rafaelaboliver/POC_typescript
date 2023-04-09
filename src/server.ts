@@ -1,12 +1,15 @@
 import express, { json } from "express";
 import cors from "cors";
 import routes from "./routes/index";
+import 'express-async-errors';
+import { handleApplicationErrors } from "./middlewares/error-handling-middleware";
 
 const server = express();
-server.use(json());
-server.use(cors());
-server.use(routes);
-
+server
+    .use(json())
+    .use(cors())
+    .use(routes)
+    .use(handleApplicationErrors);
 
 const PORT = Number(process.env.PORT) || 5000;
 

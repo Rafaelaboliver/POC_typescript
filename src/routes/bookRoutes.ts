@@ -1,7 +1,8 @@
 import { Router } from "express";
 import bookControllers from "../controllers/bookControllers";
-import { validateSchema } from "middlewares/validateSchema";
-import { bookSchema } from "schemas/Book";
+import { validateSchema } from "../middlewares/validateSchema";
+import { bookSchema } from "../schemas/Book";
+
 
 
 const bookRoutes = Router();
